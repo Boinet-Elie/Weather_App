@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather_App_2.MainPage">
+
+    <Grid>
+        <!-- Background -->
+        <BoxView BackgroundColor="#0A0E27"/>
+
+        <!-- Effets décoratifs -->
+        <Ellipse Fill="#0891B2" Opacity="0.15" WidthRequest="400" HeightRequest="400"
+                 HorizontalOptions="End" VerticalOptions="Start" TranslationX="100" TranslationY="-100"/>
+        <Ellipse Fill="#22D3EE" Opacity="0.1" WidthRequest="300" HeightRequest="300"
+                 HorizontalOptions="Start" VerticalOptions="End" TranslationX="-80" TranslationY="100"/>
+
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, Auto" Padding="24,50,24,30" RowSpacing="24">
+
+                <!-- En-tête -->
+                <Grid ColumnDefinitions="*, Auto" ColumnSpacing="16">
+                    <VerticalStackLayout Spacing="4" VerticalOptions="Center">
+                        <Label x:Name="GreetingLabel" Text="Bonjour" FontSize="15" TextColor="#64748B"/>
+                        <Label x:Name="CityLabel" Text="Chargement..." FontSize="26"
+                               FontAttributes="Bold" TextColor="White"/>
+                    </VerticalStackLayout>
+
+                    <Border Grid.Column="1" BackgroundColor="#1E293B" StrokeShape="RoundRectangle 24"
+                            StrokeThickness="0" WidthRequest="48" HeightRequest="48"
+                            HorizontalOptions="End" VerticalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnConfigurationClicked"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="⚙️" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </Grid>
+
+                <!-- Carte météo principale -->
+                <Border Grid.Row="1" BackgroundColor="#1E293B" StrokeShape="RoundRectangle 28"
+                        StrokeThickness="1" Stroke="#334155" Padding="28,32">
+                    <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
+                        <Label Text="Aujourd'hui" FontSize="14" TextColor="#64748B" HorizontalOptions="Center"/>
+
+                        <Image x:Name="TodayIcon" WidthRequest="120" HeightRequest="120" HorizontalOptions="Center"/>
+
+                        <Label x:Name="TodayCondition" FontSize="18" TextColor="#CBD5E1" HorizontalOptions="Center"/>
+
+                        <Label x:Name="TodayTemps" FontSize="52" FontAttributes="Bold"
+                               TextColor="White" HorizontalOptions="Center"/>
+
+                        <Border BackgroundColor="#334155" StrokeShape="RoundRectangle 8" StrokeThickness="0"
+                                HeightRequest="8" WidthRequest="200" HorizontalOptions="Center" Margin="0,8,0,0">
+                            <Grid ColumnDefinitions="*, Auto, *">
+                                <BoxView BackgroundColor="#22D3EE" Grid.Column="0"/>
+                                <BoxView BackgroundColor="Transparent" Grid.Column="1" WidthRequest="8"/>
+                                <BoxView BackgroundColor="#F97316" Grid.Column="2"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Prévisions -->
+                <VerticalStackLayout Grid.Row="2" Spacing="12">
+                    <Label Text="Prévisions" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                    <VerticalStackLayout x:Name="ForecastContainer" Spacing="12"/>
+                </VerticalStackLayout>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

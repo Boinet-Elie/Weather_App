@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/elieboinet/Documents/Projets/Weather_App#2/bin/Debug/net10.0-ios/iossimulator-arm64/Weather_App#2.app/libSystem.IO.Compression.Native.dylib

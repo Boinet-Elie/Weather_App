@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/elieboinet/Documents/Projets/Weather_App#2/obj/Debug/net10.0-ios/iossimulator-arm64/Entitlements.xcent /Users/elieboinet/Documents/Projets/Weather_App#2/bin/Debug/net10.0-ios/iossimulator-arm64/Weather_App#2.app

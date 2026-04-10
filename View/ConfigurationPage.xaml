@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather_App_2.View.ConfigurationPage"
+             Title="Configuration">
+
+    <Grid>
+        <!-- Gradient Background -->
+        <BoxView BackgroundColor="#0A0E27"/>
+
+        <!-- Decorative Elements -->
+        <Ellipse Fill="#0891B2"
+                 Opacity="0.1"
+                 WidthRequest="300"
+                 HeightRequest="300"
+                 HorizontalOptions="End"
+                 VerticalOptions="Start"
+                 TranslationX="100"
+                 TranslationY="-80"/>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="24,60,24,30"
+                                  Spacing="24"
+                                  MaximumWidthRequest="500"
+                                  HorizontalOptions="Center">
+
+                <!-- Header -->
+                <VerticalStackLayout Spacing="8" Margin="0,0,0,16">
+                    <Label Text="Paramètres"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Personnalisez votre expérience météo"
+                           FontSize="14"
+                           TextColor="#64748B"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <!-- Profile Section Card -->
+                <Border BackgroundColor="#1E293B"
+                        StrokeShape="RoundRectangle 24"
+                        StrokeThickness="1"
+                        Stroke="#334155"
+                        Padding="24,28">
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- Section Header -->
+                        <Label Text="Informations personnelles"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="#22D3EE"
+                               Margin="0,0,0,4"/>
+
+                        <!-- Last Name Entry -->
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Nom"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                            <Border BackgroundColor="#0F172A"
+                                    StrokeShape="RoundRectangle 14"
+                                    StrokeThickness="1"
+                                    Stroke="#334155"
+                                    Padding="16,14">
+                                <Entry x:Name="LastNameEntry"
+                                       FontSize="16"
+                                       TextColor="White"
+                                       Placeholder="Votre nom"
+                                       PlaceholderColor="#475569"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- First Name Entry -->
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Prénom"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                            <Border BackgroundColor="#0F172A"
+                                    StrokeShape="RoundRectangle 14"
+                                    StrokeThickness="1"
+                                    Stroke="#334155"
+                                    Padding="16,14">
+                                <Entry x:Name="FirstNameEntry"
+                                       FontSize="16"
+                                       TextColor="White"
+                                       Placeholder="Votre prénom"
+                                       PlaceholderColor="#475569"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Location Section Card -->
+                <Border BackgroundColor="#1E293B"
+                        StrokeShape="RoundRectangle 24"
+                        StrokeThickness="1"
+                        Stroke="#334155"
+                        Padding="24,28">
+                    <VerticalStackLayout Spacing="16">
+
+                        <!-- Section Header -->
+                        <Label Text="Localisation"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="#22D3EE"
+                               Margin="0,0,0,4"/>
+
+                        <Label Text="Ville préférée"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+
+                        <Border BackgroundColor="#0F172A"
+                                StrokeShape="RoundRectangle 14"
+                                StrokeThickness="1"
+                                Stroke="#334155"
+                                Padding="16,14">
+                            <Entry x:Name="CityEntry"
+                                   FontSize="16"
+                                   TextColor="White"
+                                   Placeholder="Ex: Annecy, Paris..."
+                                   PlaceholderColor="#475569"
+                                   BackgroundColor="Transparent"/>
+                        </Border>
+
+                        <Label Text="La météo de cette ville sera affichée par défaut"
+                               FontSize="12"
+                               TextColor="#64748B"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Save Button -->
+                <Border BackgroundColor="#22C55E"
+                        StrokeShape="RoundRectangle 16"
+                        StrokeThickness="0"
+                        HeightRequest="56"
+                        Margin="0,12,0,0"
+                        HorizontalOptions="Fill">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSaveClicked"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="Enregistrer"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
