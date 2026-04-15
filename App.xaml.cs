@@ -1,5 +1,6 @@
 namespace Weather_App_2;
 
+// Point d'entrée principal de l'application
 public partial class App : Application
 {
 	public App()
@@ -7,13 +8,13 @@ public partial class App : Application
 		InitializeComponent();
 	}
 
+	// Crée et configure la fenêtre principale
 	protected override Window CreateWindow(IActivationState? activationState)
 	{
 		var window = new Window(new AppShell());
 
 #if MACCATALYST
-		// Configure la taille de la fenêtre pour simuler un téléphone sur Mac Catalyst
-		// iPhone 14 Pro: 393 x 852 pixels (taille logique)
+		// Taille de fenêtre simulant un téléphone sur Mac
 		window.Width = 400;
 		window.Height = 850;
 		window.MinimumHeight = 700;

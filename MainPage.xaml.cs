@@ -6,6 +6,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 using System.Reflection;
 
+// Page principale affichant les prévisions météo
 public partial class MainPage : ContentPage
 {
     private readonly HttpClient _client;

@@ -1,5 +1,6 @@
 namespace Weather_App_2.View;
 
+// Page de configuration pour les paramètres utilisateur
 public partial class ConfigurationPage : ContentPage
 {
     public ConfigurationPage()
